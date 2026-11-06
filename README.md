@@ -29,9 +29,46 @@ A premium, ethically sourced coffee brand landing page and storefront demo built
 - [Node.js](https://nodejs.org/) (v18.x or higher recommended)
 - [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
 
-### Installation
+## 📂 Project Structure
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/nexora-coffee.git
-   cd nexora-coffee
+```text
+nexora-coffee/
+├── src/
+│   ├── lib/
+│   │   ├── components/       # Reusable UI components (Navbar, Footer, SEO, etc.)
+│   │   ├── data.ts           # Centralized mock data (products, testimonials, links)
+│   │   ├── stores/           # Svelte 5 state stores (cart, toast)
+│   │   ├── types.ts          # TypeScript interfaces
+│   │   └── utils.ts          # Helper functions (formatPrice, slugify, etc.)
+│   ├── routes/
+│   │   ├── +page.svelte      # Homepage
+│   │   ├── +layout.svelte    # Root layout (includes Navbar/Footer)
+│   │   ├── +error.svelte     # Custom 404/500 error page
+│   │   ├── about/            # About Us page
+│   │   └── products/
+│   │       └── [slug]/       # Dynamic Product Detail Page
+│   ├── app.css               # Global CSS variables and base styles
+│   └── app.html              # Main HTML template
+├── static/
+│   └── favicon.png           # Site favicon
+├── package.json
+├── svelte.config.js
+├── tsconfig.json
+└── vite.config.ts
+```
+
+## 👨‍💻 Author
+
+Crafted with ☕ & ❤️ by **Paras Dhiman** & **SoftwareLabs**.
+
+- **Portfolio**: [paras367.github.io](https://paras367.github.io/)
+- **Agency**: [softwarelabs.vercel.app](https://softwarelabs.vercel.app/)
+
+## 📄 License
+
+This project is proprietary. All rights reserved. Unauthorized copying, distribution, or deployment of this code for commercial purposes is strictly prohibited.
+
+---
+*Built for excellence. Brewed with purpose.*
+
+
