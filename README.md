@@ -1,56 +1,37 @@
-# sv
+# ☕ Nexora Coffee
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A premium, ethically sourced coffee brand landing page and storefront demo built with **SvelteKit 5**, **TypeScript**, and modern web standards. Designed for high conversion, beautiful aesthetics, and seamless user experience.
 
-## Creating a project
+![Nexora Coffee](https://nexora-coffee.vercel.app/favicon.png?w=1200&q=80)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## ✨ Features
 
-```sh
-# create a new project
-npx sv create my-app
-```
+- 🚀 **Svelte 5 Runes**: Built with the latest `$state`, `$derived`, and `$effect` for ultra-reactive, boilerplate-free code.
+- 📱 **Fully Responsive**: Mobile-first design with smooth accordion menus, sticky mobile CTAs, and touch-friendly interactions.
+- 🔍 **Real-Time Search**: Instant, client-side product filtering with a beautiful dropdown UI.
+- 🎨 **Premium UI/UX**: Glassmorphism, custom scroll animations, hover micro-interactions, and a cohesive coffee-themed design system.
+- 🔔 **Toast Notifications**: Custom, non-intrusive feedback system for cart actions, wishlist, and form submissions.
+- 🛒 **E-Commerce Ready**: Dynamic product detail pages, quantity selectors, wishlist toggles, and related product recommendations.
+- 🔎 **SEO Optimized**: Dynamic meta tags, Open Graph support, JSON-LD structured data, auto-generated `sitemap.xml`, and `robots.txt`.
+- ♿ **Accessible**: Semantic HTML, ARIA labels, keyboard navigation support, and reduced-motion preferences.
 
-To recreate this project with the same configuration:
+## 🛠️ Tech Stack
 
-```sh
-# recreate this project
-npx sv@1.1.1 create --template minimal --types ts --install npm nexora
-```
+- **Framework**: [SvelteKit](https://kit.svelte.dev/) (v2+) with Svelte 5 syntax
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: Custom CSS Variables, CSS Grid/Flexbox, Smooth Transitions
+- **Icons**: [Lucide Svelte](https://lucide.dev/) & [Font Awesome 6](https://fontawesome.com/)
+- **Deployment**: [Vercel](https://vercel.com/)
 
-## Adding features
+## 🚀 Getting Started
 
-Add features to your project with `sv add`:
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18.x or higher recommended)
+- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
 
-```sh
-npx sv add
-```
+### Installation
 
-For example, to add Tailwind CSS:
-
-```sh
-npx sv add tailwindcss
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/nexora-coffee.git
+   cd nexora-coffee
