@@ -20,20 +20,18 @@
     return () => window.removeEventListener('scroll', handleScroll);
   });
 
-  // Payment methods
-  const paymentMethods = [
-    { icon: 'fa-brands fa-cc-visa', name: 'Visa' },
-    { icon: 'fa-brands fa-cc-mastercard', name: 'Mastercard' },
-    { icon: 'fa-brands fa-cc-amex', name: 'American Express' },
-    { icon: 'fa-brands fa-cc-paypal', name: 'PayPal' },
-    { icon: 'fa-brands fa-apple-pay', name: 'Apple Pay' }
+  // ✅ LANDING PAGE FOCUS: Brand Values & Certifications instead of payment methods
+  const brandValues = [
+    { icon: 'fa-solid fa-leaf', text: '100% Organic Beans' },
+    { icon: 'fa-solid fa-hand-holding-heart', text: 'Fair Trade Certified' },
+    { icon: 'fa-solid fa-globe', text: 'Carbon Neutral Operations' }
   ];
 
-  // Trust badges
-  const trustBadges = [
-    { icon: 'fa-solid fa-shield-halved', text: 'SSL Secure Checkout' },
-    { icon: 'fa-solid fa-rotate-left', text: '30-Day Money Back' },
-    { icon: 'fa-solid fa-truck-fast', text: 'Free Shipping $50+' }
+  const certifications = [
+    { icon: 'fa-solid fa-certificate', name: 'Fair Trade' },
+    { icon: 'fa-solid fa-leaf', name: 'USDA Organic' },
+    { icon: 'fa-solid fa-award', name: 'B-Corp Certified' },
+    { icon: 'fa-solid fa-hand-holding-heart', name: 'Direct Trade' }
   ];
 </script>
 
@@ -55,7 +53,6 @@
     <div class="grid">
       <!-- Brand Column -->
       <div class="brand">
-        <!-- ✅ ENHANCED: Favicon Logo -->
         <a href="/" class="logo">
           <img src="/favicon.png" alt="Nexora Logo" class="logo-favicon" />
           <span class="logo-text">Nexora</span>
@@ -64,12 +61,12 @@
           Brewed with purpose. Every cup supports farmers, communities, and a healthier planet.
         </p>
         
-        <!-- Enhanced Trust Badges -->
-        <div class="trust-badges">
-          {#each trustBadges as badge}
-            <div class="trust-badge">
-              <i class={badge.icon}></i>
-              <span>{badge.text}</span>
+        <!-- Brand Values -->
+        <div class="brand-values">
+          {#each brandValues as value}
+            <div class="value-badge">
+              <i class={value.icon}></i>
+              <span>{value.text}</span>
             </div>
           {/each}
         </div>
@@ -128,19 +125,16 @@
       {/each}
     </div>
 
-    <!-- Payment & Security -->
-    <div class="payment-section">
-      <div class="payment-methods">
-        <span class="payment-label">We Accept:</span>
-        <div class="payment-icons">
-          {#each paymentMethods as method}
-            <i class={method.icon} title={method.name} aria-label={method.name}></i>
-          {/each}
-        </div>
-      </div>
-      <div class="security-badges">
-        <i class="fa-solid fa-lock" title="256-bit SSL Secure" aria-label="Secure connection"></i>
-        <span>256-bit SSL Secure Checkout</span>
+    <!-- ✅ Certifications Section (Replaces Payment Methods) -->
+    <div class="certifications-section">
+      <span class="cert-label">Proudly Certified By:</span>
+      <div class="cert-icons">
+        {#each certifications as cert}
+          <div class="cert-item" title={cert.name}>
+            <i class={cert.icon}></i>
+            <span>{cert.name}</span>
+          </div>
+        {/each}
       </div>
     </div>
 
@@ -174,10 +168,10 @@
         </div>
       </div>
       
-      <!-- ✅ DEMO STOREFRONT DISCLAIMER -->
+      <!-- ✅ LANDING PAGE DISCLAIMER -->
       <div class="demo-disclaimer">
         <i class="fa-solid fa-circle-info"></i>
-        <span>Premium demo storefront. Available for acquisition.</span>
+        <span>Premium landing page template. Available for acquisition.</span>
       </div>
     </div>
 
@@ -249,7 +243,6 @@
   }
   .logo:hover { transform: scale(1.03); }
   
-  /* ✅ Favicon Logo Styles */
   .logo-favicon { 
     width: 36px; 
     height: 36px; 
@@ -276,14 +269,14 @@
     font-size: 1rem;
   }
 
-  /* Trust Badges */
-  .trust-badges {
+  /* Brand Values (Replaces Trust Badges) */
+  .brand-values {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
     margin-bottom: 2rem;
   }
-  .trust-badge {
+  .value-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.7rem;
@@ -297,12 +290,12 @@
     width: fit-content;
     transition: var(--transition);
   }
-  .trust-badge:hover {
+  .value-badge:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(217, 119, 6, 0.3);
     transform: translateX(4px);
   }
-  .trust-badge i {
+  .value-badge i {
     color: var(--color-accent);
     font-size: 1rem;
     width: 20px;
@@ -415,55 +408,52 @@
   }
   .contact a:hover { color: var(--color-accent-light); }
 
-  /* Payment Section */
-  .payment-section {
+  /* ✅ Certifications Section (Landing Page Style) */
+  .certifications-section {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     gap: 1.5rem;
     padding: 2.5rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     margin-bottom: 2.5rem;
+    text-align: center;
   }
-  .payment-methods {
+  .cert-label {
+    font-size: 0.85rem;
+    color: rgba(245, 235, 224, 0.6);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .cert-icons {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2.5rem;
     flex-wrap: wrap;
   }
-  .payment-label {
-    font-size: 0.9rem;
-    color: rgba(245, 235, 224, 0.7);
-    font-weight: 500;
-  }
-  .payment-icons {
+  .cert-item {
     display: flex;
-    gap: 1.2rem;
-    font-size: 2.2rem;
-    color: var(--color-cream);
-  }
-  .payment-icons i {
-    transition: var(--transition);
-    filter: grayscale(1) opacity(0.5);
-  }
-  .payment-icons i:hover {
-    filter: grayscale(0) opacity(1);
-    transform: translateY(-3px);
-    color: var(--color-white);
-  }
-  .security-badges {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.6rem;
-    font-size: 0.85rem;
-    color: rgba(245, 235, 224, 0.8);
-    font-weight: 500;
+    gap: 0.5rem;
+    color: rgba(245, 235, 224, 0.5);
+    transition: var(--transition);
   }
-  .security-badges i {
-    color: #10b981;
-    font-size: 1.1rem;
+  .cert-item i {
+    font-size: 1.8rem;
+  }
+  .cert-item span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .cert-item:hover {
+    color: var(--color-accent);
+    transform: translateY(-3px);
   }
 
   /* Bottom Bar */
@@ -601,7 +591,7 @@
     color: var(--color-cream);
   }
 
-  /* ✅ DEMO DISCLAIMER */
+  /* ✅ LANDING PAGE DISCLAIMER */
   .demo-disclaimer {
     display: inline-flex;
     align-items: center;
@@ -667,9 +657,9 @@
       text-align: center; 
       border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
     }
-    .logo, .socials, .trust-badges { justify-content: center; }
+    .logo, .socials, .brand-values { justify-content: center; }
     .brand-desc { margin: 0 auto 2rem; }
-    .trust-badge { width: fit-content; margin: 0 auto; }
+    .value-badge { width: fit-content; margin: 0 auto; }
 
     .col { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
     .toggle { 
@@ -696,14 +686,12 @@
     .col.open .content { grid-template-rows: 1fr; }
     .col.open .content-inner { visibility: visible; padding-bottom: 1.5rem; }
 
-    .payment-section {
-      flex-direction: column;
-      text-align: center;
+    .certifications-section {
       gap: 1.5rem;
     }
-    .payment-methods { flex-direction: column; gap: 1rem; }
-    .payment-icons { justify-content: center; }
-    .security-badges { justify-content: center; }
+    .cert-icons { 
+      gap: 1.5rem; 
+    }
 
     .bottom { 
       flex-direction: column; 
@@ -731,10 +719,14 @@
       width: 100%;
       max-width: 320px;
     }
+    .cert-item {
+      gap: 0.3rem;
+    }
+    .cert-item i { font-size: 1.5rem; }
+    .cert-item span { font-size: 0.65rem; }
   }
 
   @media (max-width: 480px) {
-    .payment-icons { font-size: 1.8rem; gap: 1rem; }
     .legal a { font-size: 0.8rem; }
   }
 
